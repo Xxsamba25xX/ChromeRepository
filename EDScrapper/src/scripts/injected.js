@@ -17,7 +17,7 @@ XHR.setRequestHeader = function (header, value) {
 
 XHR.send = function () {
 
-    this.addEventListener('load', function () {
+    this.addEventListener('load', function (ad) {
         const url = this.responseURL
         const responseHeaders = this.getAllResponseHeaders()
         try {
@@ -29,7 +29,8 @@ XHR.send = function () {
                     responseBody = this.response
                 }
                 // Do you stuff HERE.
-                console.log(responseBody);
+                console.log(this.responseURL);
+                window.postMessage(responseBody, "*");
             }
         } catch (err) {
             console.debug("Error reading or processing response.", err)
