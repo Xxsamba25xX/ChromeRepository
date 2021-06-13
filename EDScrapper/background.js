@@ -1,12 +1,13 @@
 try {
 
-    chrome.runtime.onConnect.addListener(function (port) {
-        if (port.name !== "devtools") return;
-        port.onMessage.addListener(function (msg) {
-            // Received message from devtools. Do something:
-            console.log(msg);
-        });
-    })
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+        // 2. A page requested user data, respond with a copy of `user`
+        console.log(message);
+        if (message === 'get-user-data') {
+            sendResponse("user");
+        }
+    });
+    console.log("listo.")
 } catch (error) {
     console.log(error)
 }

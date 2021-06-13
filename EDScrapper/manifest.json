@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "EDScrapper",
-  "version": "1.0",
+  "version": "2.0",
 
   "icons": {
     "128": "src/img/icon128.png"
@@ -15,8 +15,28 @@
   "host_permissions": [
     "<all_urls>"
   ],
-  "devtools_page": "src/devtool/devtools.html",
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://ed.team/cursos/*"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "src/scripts/content_script.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/scripts/injected.js"
+      ],
+      "matches": [
+        "https://ed.team/*"
+      ]
+    }
+  ]
 }
