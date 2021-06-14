@@ -6,6 +6,12 @@
   "icons": {
     "128": "src/img/icon128.png"
   },
+  "action": {
+    "default_icon": {
+      "16": "src/img/icon16.png"
+    },
+    "default_title": "Click Me"
+  },
 
   "permissions": [
     "activeTab",

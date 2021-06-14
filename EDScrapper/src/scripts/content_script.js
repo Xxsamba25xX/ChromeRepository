@@ -1,9 +1,11 @@
 try {
     window.addEventListener('load', (event) => {
-        console.log(document.getElementById("vimeo-player").innerHTML)
-        console.log(document.getElementsByTagName("iframe").length)
+        if (document.getElementById("vimeo-player") != undefined) {
+            chrome.runtime.sendMessage("getMyInfo", tabId => {
+                console.log(tabId);
+            });
+        }
     })
-
 }
 catch (err) {
     console.log(err);
