@@ -41,6 +41,14 @@
         "src/scripts/injected.js"
       ],
       "matches": [
+        "*"
+      ]
+    },
+    {
+      "resources": [
+        "src/scripts/utileria.js"
+      ],
+      "matches": [
         "https://ed.team/*"
       ]
     }
