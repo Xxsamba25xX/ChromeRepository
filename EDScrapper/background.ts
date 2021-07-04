@@ -1,7 +1,8 @@
+var chrome: any;
 
 try {
-    import x from 'src/scripts/utileria.js'
-    console.log(x);
+    var asad: asda;
+    asad.nn = "asda";
     chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         var response = [];
         if (request == "getMyInfo") {
@@ -48,4 +49,10 @@ function executeOnVimeoFrame() {
     catch (err) {
         console.log(err);
     }
+}
+
+
+
+class asda {
+    nn: string;
 }
